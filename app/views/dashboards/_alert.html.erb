@@ -1,0 +1,6 @@
+<div class="alert alert-error">
+  Please create at least 1 Physician account to get started!' <br>
+  If you are a 'Physician', you can edit your profile to change your account type to 'Physician' or you can create a new Physican account by cliking the link below. <br>
+  <br>
+  <%= link_to 'I am a Physician', edit_user_path(current_user), :class => 'btn btn-small btn-success'  %> or <%= link_to 'Create a new Physican account', new_physician_path, :class => 'btn btn-small btn-success'  %>
+</div>

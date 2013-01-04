@@ -1,0 +1,9 @@
+<% if @physicians.count == 0%>
+  <%= render 'dashboards/physician/alert' %>
+<% end %>
+
+<%= render 'dashboards/physician/stats' %>
+
+<div class="row">
+  <%= render 'dashboards/physician/appointments' %>
+</div> <!-- /row -->

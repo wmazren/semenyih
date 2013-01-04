@@ -1,0 +1,92 @@
+<div class="row">
+<%= simple_form_for(@patient, :html => { :class => 'form-horizontal' }) do |f| %>
+  <%= f.hidden_field :organization_id, :value => current_user.organization_id %>
+
+  <div class="span6">
+    <div class="widget">
+      <div class="widget-header">
+        <i class="icon-user"></i>
+        <h3>Patient Details</h3>
+      </div> <!-- /widget-header -->
+
+      <div class="widget-content">
+        <div class="inputs">
+          <%= f.input :first_name, :required => true, :autofocus => true, :placeholder => "John", :input_html => { :class => "span4" } %>
+          <%= f.input :last_name, :required => true, :placeholder => "Doe", :input_html => { :class => "span4" } %>
+          <%= f.input :sex, :collection => [ "Male", "Female" ], :include_blank => false, :input_html => { :class => "span1" } %>
+          <%= f.input :marital_status, :collection => [ "Maried", "Single" ], :include_blank => false, :input_html => { :class => "span2" } %>
+          <%= f.input :dob, :as => :date_picker, :required => true, :placeholder => "DD/MM/YYYY", :input_html => { :class => "span2" } %>
+          <%= f.input :identification_number, :required => true, :placeholder => "XXXXXXXXXXX", :input_html => { :class => "span2" } %>
+          <%# f.association :childrens,
+                            :collection => @patient.organization.patients,
+                            :label_method => :first_name, :as => :select %>
+        </div>
+      </div> <!-- /widget-content -->
+    </div> <!-- /widget -->
+
+    <div class="widget">
+      <div class="widget-header">
+        <i class="icon-file"></i>
+        <h3>Contact Details</h3>
+      </div> <!-- /widget-header -->
+
+      <div class="widget-content">
+        <%= f.input :address1, :input_html => { :class => "span4" } %>
+        <%= f.input :address2, :input_html => { :class => "span4" } %>
+        <%= f.input :postcode, :input_html => { :class => "span1" } %>
+        <%= f.input :city, :input_html => { :class => "span2" } %>
+        <%= f.input :state, :input_html => { :class => "span2" },
+            :collection => [ "Wilayah Persekutuan Kuala Lumpur", "Wilayah Persekutuan Labuan", "Wilayah Persekutuan Putrajaya",
+            "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", "Selangor", "Terrengganu" ], :include_blank => false %>
+      </div> <!-- /widget-content -->
+
+    </div> <!-- /widget -->
+  </div> <!-- /span6 -->
+
+  <div class="span6">
+    <div class="widget">
+      <div class="widget-header">
+        <i class="icon-file"></i>
+        <h3>Medical Details</h3>
+      </div> <!-- /widget-header -->
+
+      <div class="widget-content">
+        <%= f.input :blood_type, :collection => [ "Group A", "Group B", "Group AB", "Group O" ], :include_blank => false, :input_html => { :class => "span2" } %>
+      </div> <!-- /widget-content -->
+    </div> <!-- /widget -->
+
+    <div class="widget">
+      <div class="widget-header">
+        <i class="icon-file"></i>
+        <h3>Others</h3>
+      </div> <!-- /widget-header -->
+
+      <div class="widget-content">
+        <p>to put somthing here...</p>
+        <p>like insurance details, etc.</p>
+      </div> <!-- /widget-content -->
+    </div> <!-- /widget -->
+
+    <div class="widget">
+      <div class="widget-header">
+        <i class="icon-file"></i>
+        <h3>Notes</h3>
+      </div> <!-- /widget-header -->
+
+      <div class="widget-content">
+        <%= f.input :notes, :input_html => { :class => "span4" } %>
+      </div> <!-- /widget-content -->
+    </div> <!-- /widget -->
+  </div> <!-- /span6 -->
+</div> <!-- /row-->
+
+<div class="row">
+  <div class="span12">
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  root_path, :class => 'btn' %>
+    </div>
+  </div> <!-- /span12 -->
+</div> <!-- /row-->
+<% end %>

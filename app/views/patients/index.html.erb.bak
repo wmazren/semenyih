@@ -1,0 +1,58 @@
+<%= form_tag patients_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :first_name => nil %>
+  </p>
+<% end %>
+
+<div class="widget widget-table action-table">
+  <div clas="page_info">
+    <%= page_entries_info @patients %>
+  </div>
+
+  <div class="widget-header">
+    <i class="icon-th-list"></i>
+    <h3>All Patients</h3>
+  </div> <!-- /widget-header -->
+    
+  <div class="widget-content">
+    <table class="table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th><%= link_to "First Name", :sort => "first_name" %></th>
+          <th><%= link_to "Last Name", :sort => "last_name" %></th>
+          <th>Organization</th>
+          <th><%= link_to "IC No", :sort => "ic_no" %></th>
+          <th><%= link_to "DOB", :sort => "dob" %></th>
+          <th class="td-actions">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td><%= link_to patient.first_name, patient_path(patient) %></td>
+            <td><%= patient.last_name %></td>
+            <td><%= patient.organization.name %></td>
+            <td><%= patient.ic_no %></td>
+            <td><%= patient.dob %></td>
+            <td class="td-actions">
+              <%= link_to "Edit", edit_patient_path(patient), :class => 'btn btn-mini' %> 
+              <%= link_to 'Destroy', patient, :data => { :confirm => 'Are you sure?' }, method: :delete, :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div> <!-- /widget-content -->
+
+  <br>
+
+  <div class="digg_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @patients %>
+    </div>
+    <%= will_paginate @patients, :container => false %>
+  </div>
+</div> <!-- /widget -->

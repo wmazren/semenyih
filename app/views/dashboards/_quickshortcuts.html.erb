@@ -1,0 +1,31 @@
+<div class="span4">
+  <div class="widget">
+    <div class="widget-header">
+      <i class="icon-bookmark"></i>
+      <h3>Quick Shortcuts</h3>
+    </div> <!-- /widget-header -->
+
+    <div class="widget-content">
+      <div class="shortcuts">
+        <%= link_to users_path, :class => "shortcut" do %>
+          <i class="shortcut-icon icon-signal"></i>
+          <span class="shortcut-label">List Users</span>
+        <% end %>
+
+        <%= link_to new_user_path, :class => "shortcut" do %>
+          <i class="shortcut-icon icon-signal"></i>
+          <span class="shortcut-label">Create user</span>
+        <% end %>
+
+        <%= link_to patients_path, :class => "shortcut" do %>
+          <i class="shortcut-icon icon-signal"></i>
+          <span class="shortcut-label">List Patients</span>
+        <% end %>
+
+        <%= link_to new_patient_url, :class => "shortcut" do %>
+          <i class="shortcut-icon icon-signal"></i>
+          <span class="shortcut-label">Create Patient</span>
+        <% end %>
+    </div> <!-- /widget-content -->
+  </div> <!-- /widget -->
+</div> <!-- /span4 -->

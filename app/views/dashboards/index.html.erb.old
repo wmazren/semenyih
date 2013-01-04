@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <%= render 'dashboards/admin/admin' %>
+  <% end %>
+
+  <% if current_user.type == "Physician" %>
+    <h1>Physician Dashboard</h1><br>
+    <%= render 'dashboards/physician/physician' %>
+  <% end %>
+<% end %>

@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="span8">
+    <div class="widget ">
+      <div class="widget-header">
+        <i class="icon-user"></i>
+        <h3>Show Appointment for: <%= @appointment.patient.first_name %>, on <%= @appointment.appointment_date %> </h3>
+      </div> <!-- /widget-header -->
+        
+      <div class="widget-content">
+        <div class="tabbable">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#appointment" data-toggle="tab">Appointment</a>
+            </li>
+          </ul>
+          
+          <div class="tab-content">
+            <div class="tab-pane active" id="profile">
+              <dl class="dl-horizontal">
+                <dt>First Name :</dt>
+                  <dd><%= @appointment.patient.first_name %></dd>
+                <dt>Last Name :</dt>
+                  <dd><%= @appointment.patient.last_name %></dd>
+                <dt>Physician :</dt>
+                  <dd><%= @appointment.physician.first_name %></dd>
+                <dt>Date :</dt>
+                  <dd><%= @appointment.appointment_date %></dd>
+                <dt>State :</dt>
+                  <dd><%= @appointment.state %></dd>
+                <dt>Notes :</dt>
+                  <dd><%= simple_format h @appointment.notes %></dd>
+              </dl>
+            </div> <!-- /tab-pane active -->
+          </div> <!-- /tab-content -->
+        </div> <!-- /tabbable --> 
+      </div> <!-- /widget-content -->   
+    </div> <!-- /widget -->     
+  </div> <!-- /span8 -->
+
+  <div class="span4">
+    <div class="widget">
+      <div class="widget-header">
+        <i class="icon-bookmark"></i>
+        <h3>Important Informations</h3>
+      </div> <!-- /widget-header -->
+
+      <div class="widget-content">
+        
+
+
+
+      </div> <!-- /widget-content -->
+    </div> <!-- /widget -->
+  </div> <!-- /span4 -->
+</div> <!-- /row -->
