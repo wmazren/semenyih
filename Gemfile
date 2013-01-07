@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass', '~> 2.2.2.0'
+# gem 'bootstrap-datepicker-rails'
 # gem 'jquery-ui-themes'
 
 # Gems used only for assets and not required
@@ -24,6 +25,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+
+  gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails'

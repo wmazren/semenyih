@@ -10,12 +10,12 @@
       </div> <!-- /widget-header -->
 
       <div class="widget-content">
-        <div class="inputs">
+        <div class="inputs data-behaviour='datepicker'">
           <%= f.input :first_name, :required => true, :autofocus => true, :placeholder => "John" %>
           <%= f.input :last_name, :required => true, :placeholder => "Doe" %>
           <%= f.input :sex, :collection => [ "Male", "Female" ], :include_blank => false %>
           <%= f.input :marital_status, :collection => [ "Maried", "Single" ], :include_blank => false %>
-          <%= f.input :dob, :required => true, :placeholder => "DD/MM/YYYY" %>
+          <%= f.input :dob, :as => :datepicker, :required => true, :placeholder => "DD/MM/YYYY" %>
           <%= f.input :identification_number, :required => true, :placeholder => "XXXXXXXXXXX" %>
           <%# f.association :childrens,
                             :collection => @patient.organization.patients,
