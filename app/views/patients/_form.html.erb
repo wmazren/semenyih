@@ -11,12 +11,12 @@
 
       <div class="widget-content">
         <div class="inputs">
-          <%= f.input :first_name, :required => true, :autofocus => true, :placeholder => "John", :input_html => { :class => "span4" } %>
-          <%= f.input :last_name, :required => true, :placeholder => "Doe", :input_html => { :class => "span4" } %>
-          <%= f.input :sex, :collection => [ "Male", "Female" ], :include_blank => false, :input_html => { :class => "span1" } %>
-          <%= f.input :marital_status, :collection => [ "Maried", "Single" ], :include_blank => false, :input_html => { :class => "span2" } %>
-          <%= f.input :dob, :as => :date_picker, :required => true, :placeholder => "DD/MM/YYYY", :input_html => { :class => "span2" } %>
-          <%= f.input :identification_number, :required => true, :placeholder => "XXXXXXXXXXX", :input_html => { :class => "span2" } %>
+          <%= f.input :first_name, :required => true, :autofocus => true, :placeholder => "John" %>
+          <%= f.input :last_name, :required => true, :placeholder => "Doe" %>
+          <%= f.input :sex, :collection => [ "Male", "Female" ], :include_blank => false %>
+          <%= f.input :marital_status, :collection => [ "Maried", "Single" ], :include_blank => false %>
+          <%= f.input :dob, :required => true, :placeholder => "DD/MM/YYYY" %>
+          <%= f.input :identification_number, :required => true, :placeholder => "XXXXXXXXXXX" %>
           <%# f.association :childrens,
                             :collection => @patient.organization.patients,
                             :label_method => :first_name, :as => :select %>
@@ -31,12 +31,11 @@
       </div> <!-- /widget-header -->
 
       <div class="widget-content">
-        <%= f.input :address1, :input_html => { :class => "span4" } %>
-        <%= f.input :address2, :input_html => { :class => "span4" } %>
-        <%= f.input :postcode, :input_html => { :class => "span1" } %>
-        <%= f.input :city, :input_html => { :class => "span2" } %>
-        <%= f.input :state, :input_html => { :class => "span2" },
-            :collection => [ "Wilayah Persekutuan Kuala Lumpur", "Wilayah Persekutuan Labuan", "Wilayah Persekutuan Putrajaya",
+        <%= f.input :address1 %>
+        <%= f.input :address2 %>
+        <%= f.input :postcode %>
+        <%= f.input :city %>
+        <%= f.input :state, :collection => [ "Wilayah Persekutuan Kuala Lumpur", "Wilayah Persekutuan Labuan", "Wilayah Persekutuan Putrajaya",
             "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", "Selangor", "Terrengganu" ], :include_blank => false %>
       </div> <!-- /widget-content -->
 

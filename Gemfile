@@ -10,7 +10,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass', '~> 2.2.2.0'
-gem 'jquery-ui-themes'
+# gem 'jquery-ui-themes'
 
 # Gems used only for assets and not required
 # in production environments by default.

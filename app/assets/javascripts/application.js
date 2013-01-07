@@ -17,6 +17,3 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require_tree .
-$("input.date_picker").datepicker({
-  dateFormat: "dd/mm/yy"
-});
