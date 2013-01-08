@@ -17,3 +17,9 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.ui.datepicker
 //= require_tree .
+!function ($) {
+  $(function(){
+    // carousel demo
+    $('#myCarousel').carousel()
+  })
+}(window.jQuery)
