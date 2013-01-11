@@ -7,6 +7,7 @@ gem 'rails', '3.2.10'
 
 gem 'pg'
 gem 'simple_form'
+gem 'country_select'
 gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass', '~> 2.2.2.0'
