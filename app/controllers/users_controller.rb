@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = User.all
   end
 
   def show
@@ -18,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "User created"
-      redirect_to root_path
+      redirect_to dashboards_path
     else
       render 'new'
     end
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
     if @user.update_with_password(params[:user])
       sign_in @user, :bypass => true
       flash[:notice] = "Successfully updated user."
-      redirect_to root_path
+      redirect_to dashboards_path
     else
       render :action => 'edit'
     end

@@ -15,10 +15,9 @@ ActiveRecord::Schema.define(:version => 20121228213950) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "patient_id"
-    t.integer  "user_id"
+    t.integer  "physician_id"
+    t.date     "appointment_date"
     t.integer  "organization_id"
-    t.integer  "treatment_id"
-    t.datetime "appointment_date"
     t.string   "state",            :default => "open"
     t.text     "notes"
     t.datetime "created_at",                           :null => false
@@ -27,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20121228213950) do
 
   add_index "appointments", ["organization_id"], :name => "index_appointments_on_organization_id"
   add_index "appointments", ["patient_id"], :name => "index_appointments_on_patient_id"
-  add_index "appointments", ["user_id"], :name => "index_appointments_on_user_id"
+  add_index "appointments", ["physician_id"], :name => "index_appointments_on_physician_id"
 
   create_table "organizations", :force => true do |t|
     t.string   "name",          :default => "",   :null => false
@@ -68,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20121228213950) do
     t.string   "company"
     t.string   "occupation"
     t.string   "blood_type"
-    t.string   "notes"
+    t.text     "notes"
     t.integer  "organization_id"
     t.integer  "parent_id"
     t.datetime "created_at",            :null => false

@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
-  <% if @physicians.count == 0%>
+  <% if @physicians.count == 0 %>
     <%= render 'dashboards/alert' %>
   <% end %>
-
 
   <div class="row">
     <%= render 'dashboards/stats' %>
   </div>
+
   <div class="row">
     <%= render 'dashboards/appointments' %>
     <%= render 'dashboards/quickshortcuts' %>

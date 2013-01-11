@@ -10,29 +10,25 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <% if user_signed_in? %>
-      <%= render 'layouts/navigation' %>
+    <%= render 'layouts/navigation' %>
 
-      <div id="main" role="main">
-        <div class="container">
-          <div class="content">
-            <div class="row">
-              <div class="span12">
-                <%= render 'layouts/messages' %>
-              </div>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+          <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
             </div>
-            <div class="row">
-              <div class="span12">
-                <%= yield %>
-              </div>
-            </div>
-            <footer>
-            </footer>
           </div>
-        </div> <!--! end of .container -->
-      </div> <!--! end of #main -->
-    <% else %>
-      <%= yield %>
-    <% end %>
+          <div class="row">
+            <div class="span12">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+
+        <%= render 'layouts/footer' %>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
   </body>
 </html>
